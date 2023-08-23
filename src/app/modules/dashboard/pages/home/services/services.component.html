@@ -1,0 +1,13 @@
+<ng-container [ngSwitch]="PAGE_STATE">
+  <section *ngSwitchCase="PROGRESS.DONE" class="main-content-body">
+
+
+
+  </section>
+
+  <ng-container *ngSwitchCase="PROGRESS.LOADING">
+    <section class="loader-screen">
+      <mat-spinner strokeWidth="3" [diameter]="30"></mat-spinner>
+    </section>
+  </ng-container>
+</ng-container>

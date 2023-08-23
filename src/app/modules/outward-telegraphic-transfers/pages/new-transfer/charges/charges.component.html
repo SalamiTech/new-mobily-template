@@ -1,0 +1,60 @@
+
+<app-display-card>
+    <section class = "card-header" >
+        <span class = "card-title"> Charges </span> 
+        
+        <span class = "card-instruction"> Fill in the charges details </span>
+      </section>
+   
+      <section class = "card-content" >
+
+ <form [formGroup] = "chargeDetailsFormGroup" class="login_form_group">
+      <section class = "card-subsection" >
+        <span class = "card-sub-title"> Stanbic Charges </span>
+        <mat-form-field [style.width.%]=80   class="wire-transfer_details_input_item input-disabled">
+            <mat-label>Select Account Number Stanbic Bank charges should be debited to</mat-label>
+            <mat-select>
+              <mat-option *ngFor="let acc of accounts.accountNumbers" [value]="acc">
+                {{acc}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field> 
+        </section>
+        <section class = "card-subsection" >
+        <span class = "card-sub-title"> Foreign Charges </span> 
+        <span class = "card-sub-instruction"> Who will bear the charges?</span>
+        <span class = "subsection-info">
+             <img [src]="assetUrl+'/assets/icons/icn_info_circle_solid.svg'" alt="" srcset="">
+             <p> KEY: Me (Remitter bears all Stanbic and Foreign bank Charges); Recipient (Recipient bears all Stanbic and Foreign Charges);  Share (Remitter bears all Stanbic Bank Charges and Recipient bears all Foreign Bank Charges)</p>
+        </span>
+        <section class = "card-radio-section" >
+            <section class="card-radio">
+                  <mat-radio-button [color]="'primary'" value="Me">Me</mat-radio-button>
+              </section>
+              <section class="card-radio">
+                <mat-radio-button [color]="'primary'"  value="Recipient">Recipient</mat-radio-button>
+            </section>
+            <section class="card-radio">
+                <mat-radio-button [color]="'primary'" value="Share">Share</mat-radio-button>
+            </section>
+      </section>
+    </section>
+</form>
+      </section>
+
+        
+
+<section class="button-section">
+   <app-button (trigger)="nextForm.emit(5)" [backgroundColor]="'#3b82f6'" [textColor]="'white'" [fontsize]="'11px'" [width]="'80px'" [height]="'30px'">
+<!-- <img [src]="assetUrl+'/assets/svgs/arrow-left.svg'" alt="" srcset=""> -->
+<span>Continue</span>
+   </app-button>
+   <app-button (trigger)="nextForm.emit(3)"  [backgroundColor]="'#dbeafe'" [textColor]="'#3b82f6'" [fontsize]="'11px'" [width]="'80px'" [height]="'30px'" [marginright]= "'7px'"  [fontweight]="'600'">
+       <span>Previous</span>
+              </app-button>
+   <app-button  [backgroundColor]="'white'" [textColor]="'black'" [fontsize]="'11px'" [width]="'60px'" [bord]="'1.8px solid #e5e7eb'" [height]="'30px'" [marginright]= "'7px'"  [fontweight]="'600'">
+       <!-- <img [src]="assetUrl+'/assets/svgs/arrow-left.svg'" alt="" srcset=""> -->
+       <span>Cancel</span>
+              </app-button>
+</section>
+</app-display-card>

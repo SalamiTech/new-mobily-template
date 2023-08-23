@@ -1,0 +1,238 @@
+.main-login-container{
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.main-login-items{
+  width: 60%;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+
+  position: relative;
+
+}
+
+.main-login-items > section{
+  position: relative;
+  right: 10%;
+}
+
+.blue-strip{
+  width: 100vw;
+  z-index: 2;
+  height: 20px;
+  position: absolute;
+  background-color: #0033AA;
+
+}
+
+.login-tag-title{
+  position: absolute;
+  top : 50px;
+  left : 100px;
+  font-size: 20px;
+  color:  #0033AA;
+  font-family: 'BentonSans Medium';
+  
+}
+.gradient-cover{
+  background: linear-gradient(92.03deg, #00BFFF 1.27%, #00A1E0 24.41%, #006EFC 48.58%, #0033AA 75.32%, #0A2240 100%);
+opacity: 0.1;
+  width: 100%;
+  height: 100%;
+}
+.login-background{
+  // background-image: url("/assets/svgs/login_backdrop.svg");
+
+  background-color: orange;
+  overflow: hidden;
+
+  width: 40%;
+  height: 100%;
+ 
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: cover;
+}
+
+ .sb_tag{
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 35px;
+  left: 45px;
+}
+
+.login-background .it_can_be{
+
+  width :80%;
+  height : fit-content;
+
+  position: absolute;
+  left: -10px;
+  bottom: 10px;
+
+}
+
+.login-background .strokes_upper{
+  width: 50%;
+  height: 50%;
+  position: absolute;
+  top: 0%;
+  left: -20%;
+ 
+
+}
+
+.login-background .strokes-bottom{
+
+  position: absolute;
+  top: 75%;
+  left: 90%;
+ 
+
+}
+
+.login-background .bottom-gradient{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+button.login-btn{
+
+  color: white;
+  width: 200px;
+  height : 50px;
+  background:#0062E1;
+  background-color: #0033AA;
+  border-radius: 12px;
+
+margin-top: 20px;
+
+ box-shadow: none;
+}
+
+.button-icn{
+
+  filter: invert(21%) sepia(64%) saturate(486%) hue-rotate(173deg) brightness(96%) contrast(92%);
+}
+
+
+.login-btn:disabled{
+
+  
+  color: #274365;
+  background-color: #E3E6EA;
+ 
+
+}
+.login_form_header_container{
+  display: flex;
+  flex-direction: column;
+  // align-items : flex-end;
+
+  margin-bottom: 30px;
+}
+
+.login_form_hospitaltxt{
+  font-family: 'BentonSans Regular';
+  color: #0062E1;
+  font-weight: 700;
+}
+
+.login_form_header{
+  font-size: 36px;
+  line-height : 2.8rem;
+  
+  margin: 0;
+}
+
+.login_form_subheader{
+  font-size: 12px;
+  color : #0162EC;
+
+  font-weight: bolder;
+  font-style: italic;
+
+  text-align: right;
+}
+
+
+// .login-btn:active{
+//   // background-color: red;
+//     background: linear-gradient(93.67deg, #FFB81D 1.23%, #FF681D 58.64%);
+
+// }
+
+// .login-btn:hover{
+//   background-color: red;
+// }
+
+// .login-btn:focus{
+//   background-color: pink;
+// }
+
+// .login-btn:disabled{
+//   background-color: blue;
+// }
+
+::ng-deep button::disabled{
+  color: white;
+  
+}
+
+
+// MAT FORM FIELD  CSS
+// mat-icon-stepper selected color change 
+::ng-deep .mat-step-header .mat-step-icon-selected, .mat-step-header .mat-step-icon-state-done, .mat-step-header .mat-step-icon-state-edit {
+  background-color: red!important;
+}
+
+//input outline color
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+  color: #5C6C80   !important;
+  // opacity: 1!important;
+}
+
+//mat-input focused color
+::ng-deep .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
+  color: #0062E1 !important;
+}
+
+// mat-input error outline color
+::ng-deep .mat-form-field-appearance-outline.mat-form-field-invalid.mat-form-field-invalid .mat-form-field-outline-thick{
+  color: #DC0A0A !important;
+  opacity: 0.8!important;
+}
+
+// mat-input carent color
+::ng-deep .mat-input-element {
+  caret-color: red!important;
+}
+
+// mat-input error carent color
+::ng-deep .mat-form-field-invalid .mat-input-element, .mat-warn .mat-input-element {
+  caret-color: #DC0A0A !important;
+}
+
+// mat-label normal state style
+::ng-deep .mat-form-field-label {
+  color: #5C6C80   !important;
+  // color: $mainColor!important;
+}
+
+// mat-label focused style
+::ng-deep .mat-form-field.mat-focused .mat-form-field-label {
+  color: #0033AA   !important;
+}
+
+// mat-label error style
+::ng-deep .mat-form-field.mat-form-field-invalid .mat-form-field-label {
+  color: red!important;
+}

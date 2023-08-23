@@ -1,0 +1,194 @@
+input[type="file"] {
+    display: none;
+  }
+  
+.login_form_group{
+    padding-top: 10px;
+}
+form{
+    width : 100%;
+  }
+
+  .account_details_inputs{
+    display: flex;
+    flex-wrap: wrap;
+  
+    margin-bottom: 40px;
+  }
+  
+ .wire-transfer_details_input_item{
+    margin-left: 30px;
+    margin-bottom: -15px;
+}
+
+
+  .card-content{
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    margin-top: 10px;
+}  
+.card-subsection{
+    display: flex;
+    flex-direction: column;    
+    margin-right: -5px;
+}
+.card-content::-webkit-scrollbar {
+    display: none;
+  }
+
+
+  .card-header{
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid #e5e7eb;
+
+}
+
+  .card-title{
+    font-weight: 600;
+    margin-left: 32px;
+    margin-top: 32px;
+    font-family: Inter;
+    font-size: 26px;
+    
+}
+
+.card-sub-title{
+    font-weight: 600;
+    margin-left: 32px;
+    margin-bottom: 14px;
+    font-family: Inter;
+    font-size: 14px;
+    
+}
+.card-instruction{
+  font-weight: 600;
+  font-size: 8px;
+  margin-left: 35px;
+  margin-top: 20px;
+  font-family: Inter;
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+.card-sub-instruction{
+    font-weight: 600;
+    margin-left: 35px;
+    margin-top: -8px;
+    font-family: Inter;
+    font-size: 10px;
+    margin-bottom: 25px;
+
+  }
+.card-subsection{
+    margin-bottom: 10px;
+}
+.card-upload-section{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin-left: 30px;
+    margin-bottom: 10px;
+    padding: 20px;
+
+    background-color: #dfeefd;
+    border: 2px dashed #3B82F6;
+    border-radius: 10px;   
+}
+.card-upload-section img{
+   height:45px;
+}
+.card-upload-section label{
+    font-size: 11px;
+    font-weight: 600;
+    text-align: center;
+    font-family: 'Inter';
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+}
+.card-upload-section label p{
+ color: #3B82F6;
+}
+.card-upload-section label p:hover{
+  color: #ffffff;
+  }
+
+
+.upload-dragover{
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  margin-left: 30px;
+  border-radius: 10px;
+  background-color: #8b8b8b;
+  border: 3px dashed #373737 !important;
+  padding: 20px;
+}
+
+
+.upload-dragover label p{
+color: #ff3030;
+
+}
+
+.card-file-section{
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  margin-left: 30px;
+  border-radius: 10px;
+  background-color: #F8FAFC;
+  border: 2px solid #E2E8F0 !important;
+  padding: 10px;
+}
+.progress-bar{
+  border-radius: 10px;
+  width: 95%;
+  border-radius: 10px;
+  height:6px;
+  background-color: #14b8a6;
+  align-self: center;
+}
+.file-name{
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-left: 12px;
+  padding-right: 11px;
+
+}
+.file-name p{
+  font-size: 11px;
+  font-weight: 600;
+  color: #6B7280;
+
+}
+.trash_can{
+ padding-left: 20px;
+}
+.trash_can:hover{
+  height:17px;
+  padding-left:19px;
+}
+.card-radio-section{
+    display: flex;
+    flex-direction: row;
+    margin-top: 19px;
+    margin-left: 30px;
+}
+.card-radio{
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    width: 150px;
+    margin-right: 20px;
+}
+.button-section{
+    background-color: #f9fafb;
+    border-radius: 0px 0px 10px 17px;
+    border-top: 1px solid #e5e7eb;
+    padding: 11px;
+    display: flex;
+    flex-direction: row-reverse;
+}
+

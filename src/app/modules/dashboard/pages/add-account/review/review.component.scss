@@ -1,0 +1,106 @@
+:host{
+  width : fit-content;
+  height : fit-content;
+  flex : 0
+}
+
+*{
+
+}
+
+.add-transaction-details-container{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.transaction_type{
+  display: flex;
+
+  flex-direction: column;
+
+ margin-bottom: 40px;
+
+
+}
+
+.transaction_type_radio mat-radio-button{
+  margin-right: 30px;
+}
+
+.transaction-receipt-head, .transaction-receipt-amount-head{
+  width: 100%;
+  background-color: #F4F5F7;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex: 0 0 50px;
+
+  padding : 0px 30px;
+
+  color: #5C6C80;
+  font-size: 22px;
+
+  box-sizing: border-box;
+  margin-bottom: 20px;
+}
+
+
+.transaction-receipt-amount-head{
+  background-color: #E3E6EA;
+
+}
+
+.transaction-receipt-amount-head .amount{
+  color: #0062E1;
+}
+.transaction-receipt-head h4, .transaction-receipt-amount-head h4{
+  margin: 0px;
+
+}
+
+
+.transaction-receipt-details-main{
+  display: flex;
+  background-color: #F4F5F7;
+
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+
+  padding: 20px;
+  color: #5C6C80;
+
+  margin-bottom: 20px;
+}
+
+.transaction-receipt-details-main .trans-detail-head{
+  border-bottom: 1px solid #0000000f;
+}
+.trans-detail-head{
+
+  color: #5C6C80;
+  font-weight: 900;
+}
+
+.trans-details-ref{
+  margin-bottom: 20px;
+}
+
+.trans-details-column{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+
+  box-sizing: border-box;
+
+}
+
+
+.trans-details-column div{
+
+  width: 50%;
+  margin-bottom: 10px;
+
+}

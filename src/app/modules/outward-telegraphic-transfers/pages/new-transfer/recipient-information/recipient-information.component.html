@@ -1,0 +1,62 @@
+
+<app-display-card>
+    <section class = "card-header" >
+        <span class = "card-title"> Recipient Details </span> 
+        
+        <span class = "card-instruction"> Fill in the details of the recipient </span>
+      </section>
+    
+    <section  class = "card-content" >
+<form [formGroup] = "recipientDetailsFormGroup" class="login_form_group">
+   
+  
+    <section class="account_details_inputs">
+
+        <mat-form-field floatLabel="always" class="wire-transfer_details_input_item input-disabled" appearance="outline" [style.width.px]=327 > 
+            <mat-label>Account Number</mat-label>
+            <input  name="accountNumer"  formControlName="accountNumber" [value]="recipientDetails.accountName" matInput  [attr.disabled]="'disabled'">
+            <!-- <mat-error><mat-icon>error</mat-icon> &nbsp; Account Name is required</mat-error> -->
+        </mat-form-field> 
+
+          <mat-form-field floatLabel="always" class="wire-transfer_details_input_item input-disabled" appearance="outline" [style.width.px]=327 > 
+              <mat-label>Account Name</mat-label>
+              <input  name="accountName"  formControlName="accountName" [value]="recipientDetails.accountNumber" matInput  [attr.disabled]="'disabled'">
+              <!-- <mat-error><mat-icon>error</mat-icon> &nbsp; Account Name is required</mat-error> -->
+          </mat-form-field> 
+
+          <mat-form-field floatLabel="always" class="wire-transfer_details_input_item input-disabled" appearance="outline" [style.width.px]=327 > 
+            <mat-label>Address</mat-label>
+            <input  name="address"  formControlName="address" [value]="recipientDetails.address" matInput  [attr.disabled]="'disabled'">
+            <!-- <mat-error><mat-icon>error</mat-icon> &nbsp; Account Name is required</mat-error> -->
+        </mat-form-field> 
+
+ 
+          <mat-form-field floatLabel="always"  class="wire-transfer_details_input_item" appearance="outline" [style.width.px]=500>
+             <mat-label>Information to Recipient</mat-label>
+             <input  name="informationToRecipient" formControlName="informationToRecipient" [(ngModel)]="recipientDetails.informationToRecipient" matInput placeholder="Enter Information to Recipient">
+             <mat-error><mat-icon>error</mat-icon> &nbsp;Information to Recipient is required</mat-error>
+             </mat-form-field>
+
+             <mat-form-field floatLabel="always"  class="wire-transfer_details_input_item" appearance="outline" [style.width.px]=500>
+                <mat-label>Purpose Of Transfer</mat-label>
+                <input  name="purposeOfTransfer" formControlName="purposeOfTransfer" [(ngModel)]="recipientDetails.purposeOfTransfer" matInput placeholder="Enter Purpose Of Transfer">
+                <mat-error><mat-icon>error</mat-icon> &nbsp;Purpose Of Transfe is required</mat-error>
+                </mat-form-field>
+    </section>
+ 
+  </form>
+</section>
+<section class="button-section">
+   <app-button (trigger)="nextForm.emit(2)" [backgroundColor]="'#3b82f6'" [textColor]="'white'" [fontsize]="'11px'" [width]="'80px'" [height]="'30px'">
+<!-- <img [src]="assetUrl+'/assets/svgs/arrow-left.svg'" alt="" srcset=""> -->
+<span>Continue</span>
+   </app-button>
+   <app-button (trigger)="nextForm.emit(0)"  [backgroundColor]="'#dbeafe'" [textColor]="'#3b82f6'" [fontsize]="'11px'" [width]="'80px'" [height]="'30px'" [marginright]= "'7px'"  [fontweight]="'600'">
+       <span>Previous</span>
+              </app-button>
+   <app-button  [backgroundColor]="'white'" [textColor]="'black'" [fontsize]="'11px'" [width]="'60px'" [bord]="'1.8px solid #e5e7eb'" [height]="'30px'" [marginright]= "'7px'"  [fontweight]="'600'">
+       <!-- <img [src]="assetUrl+'/assets/svgs/arrow-left.svg'" alt="" srcset=""> -->
+       <span>Cancel</span>
+              </app-button>
+</section>
+</app-display-card>

@@ -1,0 +1,95 @@
+*{
+  --stepper-circle-width : 25px;
+  --stepper-circle-height : 25px;
+  --stepper-divider-height : 40px;
+  --stepper-divider-width : 3px;
+  --stepper-divider-offset : 2px;
+
+}
+
+:host{
+  width : fit-content;
+  height : fit-content;
+  flex : 0
+}
+
+.main-stepper-container{
+padding: 20px;
+}
+
+
+
+
+.circle{
+  width: 25px;
+  height: 25px;
+
+  border-radius: 50%;
+
+  // background-color: red;
+  margin-right: 10px;
+}
+
+.in_progress_stepper{
+  // background: linear-gradient(93.67deg, #00BFFF 1.23%, #006EFC 58.64%);
+
+  background-color: grey;
+}
+
+.completed_stepper{
+  background: linear-gradient(93.67deg, #00BFFF 1.23%, #006EFC 58.64%);
+}
+
+.stepper-divider{
+  width: var(--stepper-divider-width);
+  height: var( --stepper-divider-height);
+
+  background-color:#D1D5DB;
+  margin-left: calc(var( --stepper-circle-height)/2 - var(--stepper-divider-offset));
+
+  margin-top: -2px;
+  z-index: -1;
+
+}
+
+
+.stepper-divider-complete{
+  width: var(--stepper-divider-width);
+
+  height: var( --stepper-divider-height);
+
+  background-color:#01A4FE;
+  margin-left: calc(var( --stepper-circle-height)/2 - var(--stepper-divider-offset));
+
+  margin-top: -2px;
+
+z-index: -1;
+}
+
+.stepper-divider-complete:first-child{
+  margin-top: -1px;
+
+}
+
+.stepper-progress-container{
+  width: 200px;
+  display : flex;
+  flex-direction: column;
+  // justify-content:center;
+  // align-items:center;
+}
+
+.stepper-progress-circle{
+  display: flex;
+  align-items:center;
+
+  margin-top: -2px;
+
+  cursor: pointer;
+}
+
+
+.activated-step{
+  background-color: #0000000b;
+    border-radius: 10px 0px 0px 10px;
+}

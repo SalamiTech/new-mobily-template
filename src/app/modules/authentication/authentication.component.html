@@ -1,0 +1,71 @@
+<section class="main-login-container">
+  <div class="blue-strip"></div>
+  <section class="main-login-items ">
+
+    
+    <div class="sbg-topdiv">
+    <img  [src]="assetUrl+'/assets/images/sb_logo.png'" class="sb_tag" srcset="">
+    <img class="login-tag-title" [src]="assetUrl+'assets/svgs/sb_txt.svg'" alt="">
+    </div>
+
+
+    <section >
+
+      <section class="login_form_header_container">
+
+        <h3 class="login_form_hospitaltxt">HOSPITAL PORTAL</h3>
+        <h5 class="login_form_header">Welcome, <br />
+          Sign in to get started</h5>
+          <span class="login_form_subheader">IT CAN BE</span>
+  
+      </section>
+     
+        <form [formGroup]="loginFormGroup" (submit)="login()" class="login_form_group">
+          <mat-form-field appearance="outline" [style.width.px]=327>
+            <mat-label>User ID</mat-label>
+            <input name="username" formControlName="username" [(ngModel)]="loginData.username" matInput placeholder="User ID">
+            <mat-error><mat-icon>error</mat-icon> &nbsp;SAP ID is required</mat-error>
+          </mat-form-field>
+          <br>
+          <mat-form-field appearance="outline" [style.width.px]=327>
+            <mat-label>Password</mat-label>
+            <input name="password" formControlName="password" [(ngModel)]="loginData.password" matInput type="password" placeholder="Password">
+            <mat-error><mat-icon>error</mat-icon> &nbsp;Password is required</mat-error>
+          </mat-form-field>
+          <br>
+
+          <ng-container  >
+        
+          <button 
+          
+           *ngIf="!loader else loginProgress"
+           [disabled]="!loginFormGroup.valid" type="submit" class="login-btn" mat-flat-button>
+           <img  [src]="assetUrl+'/assets/svgs/icn_people1add.svg'" class="button-icn" srcset="">
+           SIGN IN</button>
+        </ng-container>
+        </form>
+  
+    </section>
+
+  </section>
+
+
+  
+  <section [style.backgroundImage]="'url('+assetUrl+'/assets/images/login-hospital.png)'" class="main-login-items login-background">
+    <div class="gradient-cover"></div>
+    <img  [src]="assetUrl+'/assets/images/strokes-hospital.png'" class="strokes_upper" srcset="">
+    <img  [src]="assetUrl+'/assets/images/strokes-bottom-hospital.png'" class="strokes-bottom" srcset="">
+    <img  [src]="assetUrl+'/assets/images/bottom-gradient-hospital.png'" class="bottom-gradient" srcset="">
+    <img  [src]="assetUrl+'/assets/svgs/it_can_be.svg'" class="it_can_be" srcset="">
+
+  </section>
+
+
+</section>
+
+
+<ng-template #loginProgress>
+  <div class="loginProgress">
+    <mat-spinner strokeWidth="3" [diameter]="30"></mat-spinner>
+  </div>
+</ng-template>

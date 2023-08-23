@@ -1,0 +1,22 @@
+<section class="main-stepper-container">
+  <!-- <header >
+    <h2>Step {{ selectedIndex + 1 }}/{{ steps.length }}</h2>
+  </header> -->
+
+  <!-- <div [ngTemplateOutlet]="selected ? selected.content : null"></div> -->
+ 
+  <section class="stepper-progress-container">
+
+    <ng-container  *ngFor="let step of steps; let i = index" >
+      
+      <section [ngClass]="selectedIndex === i ? 'activated-step' :''"  class="stepper-progress-circle">
+
+        <!-- <div class="circle" [ngClass]="selectedIndex === i ? 'completed_stepper' : 'in_progress_stepper'"  ></div> -->
+        <img class="circle" [src]="step.completed  ? assetUrl+'/assets/svgs/stepper-completed.svg' : assetUrl+'/assets/svgs/stepper-progress.svg'"  alt="" srcset="">
+        <span>{{ step.label }}</span>
+      </section>
+      <div *ngIf="i !== steps.length-1" [ngClass]=" step.completed ? 'stepper-divider-complete' : 'stepper-divider'" ></div>
+    </ng-container>
+  </section>
+
+</section>

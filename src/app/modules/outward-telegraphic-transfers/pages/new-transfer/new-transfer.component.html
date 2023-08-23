@@ -1,0 +1,297 @@
+<app-dashboard-container>
+
+    <app-dashboard-header></app-dashboard-header>  
+    <app-dashboard-content-container style="flex: 1 1 auto; height: calc(100vh - var(--dashboard-header-height));">
+  
+      <app-side-nav-container>
+  
+        <nav>
+          <div
+          class="link-container"
+          routerLinkActive="div-active"
+        >
+          <a
+            class="stepper-link"
+            routerLink="/dashboard/home"
+          >
+          
+          <span id="nav-link-text ">
+            <img [src]="assetUrl+'/assets/icons/dashboard.svg'" alt="" srcset="">
+  
+            
+            <span class="spacer"></span>
+  
+          </span>
+          <span class = "stepper-header"> Dashboard </span>
+          </a>
+          </div>
+<section class="nav-items">
+  <span class="nav-item">
+    <img [src]="assetUrl+'/assets/icons/card_submission.svg'" alt="" srcset="">           
+    <p class="nav-item">Ghana Card Submission</p>
+  </span>
+
+  <span class="nav-item">
+    <img [src]="assetUrl+'/assets/icons/momo_linkage.svg'" alt="" srcset="">           
+    <p class="nav-item">Momo Linkage</p>
+  </span>
+  <span class="nav-item">
+    <img [src]="assetUrl+'/assets/icons/limit_management.svg'" alt="" srcset="">           
+    <p class="nav-item">Limit Management</p>
+  </span>
+  <span class="nav-item">
+    <img [src]="assetUrl+'/assets/icons/forgot_username.svg'" alt="" srcset="">           
+    <p class="nav-item">Forgot Username</p>
+  </span>
+  <span class="nav-item">
+    <img [src]="assetUrl+'/assets/icons/cheque_request.svg'" alt="" srcset="">           
+    <p class="nav-item">Cheque Book Request</p>
+  </span>
+  <span class="nav-item">
+    <img [src]="assetUrl+'/assets/icons/stop_cheque.svg'" alt="" srcset="">           
+    <p class="nav-item">Stop Cheque</p>
+  </span>
+  <span class="nav-item">
+    <img [src]="assetUrl+'/assets/icons/statement_request.svg'" alt="" srcset="">           
+    <p class="nav-item">Statement Request</p>
+  </span>
+  <span style="
+  padding: 5px;
+  background: #D9E0F2;
+  width: 90%;
+  border-radius: 10px;"class="nav-item">
+    <img [src]="assetUrl+'/assets/icons/ott.svg'" alt="" srcset="">           
+    <p class="nav-item">Outward Telegraphic Transfers</p>
+  </span>
+  <span class="nav-item">
+    <img [src]="assetUrl+'/assets/icons/queue_management.svg'" alt="" srcset="">           
+    <p class="nav-item">Queue Management System</p>
+  </span>
+  <span class="nav-item">
+    <img [src]="assetUrl+'/assets/icons/ghanapay.svg'" alt="" srcset="">           
+    <p class="nav-item">Ghana Pay Onbaording</p>
+  </span>
+
+</section>
+         
+        </nav>
+      </app-side-nav-container>
+  
+      <app-main-content-container style="flex: 1 1 auto; height: calc(100vh - var(--dashboard-header-height))">
+  
+           
+          <section class="main-forms-content">
+            <section #stepper class="main-stepper-container">
+            
+              <section class="stepper-progress-container">
+                <span class = "stepper-header">{{step}}</span>
+                <section class = "stepper-steps" >
+                  <ng-container *ngFor="let step of steps; let i = index ">                 
+                    <section
+                      [ngClass]="navigationPosition === i ? 'activated-step' : 'not-active'"
+                       
+                      class="stepper-progress-circle"
+                    >
+                      <div
+                        [ngClass]="{'circle-tab-recently-active':navigationPosition > i, 'circle-tab': navigationPosition < i , 'circle-tab-active':navigationPosition == i }"
+                      >
+                        <span
+                          [ngClass]="
+                          navigationPosition <= i
+                              ? 'icon-tab-complete-active'
+                              : 'icon-tab-complete'
+                          "
+                          >{{ i + 1 }}</span
+                        >
+                        <img
+                          [src]="assetUrl + '/assets/svgs/check-mark.svg'"
+                          class="checkmark"
+                          [ngClass]="
+                          navigationPosition > i 
+                              ? 'icon-tab-complete-active'
+                              : 'icon-tab-complete'
+                          "
+                        />
+                      </div>
+                      <span></span>
+                    </section>
+                    <div *ngIf="i < steps.length-1" class="stepper-divider"></div>
+                  </ng-container>
+
+                </section>
+                
+
+                <img style="margin-left: 30px;width: 22%;height: 87px;" [src]="assetUrl+'/assets/icons/progressive.svg'" alt="">
+              </section>
+              
+            </section>
+            
+            <app-wire-transfer (nextForm) = "nextForm($event)" *ngIf="navigationPosition === 0" ></app-wire-transfer >
+                   
+                        
+  
+            <app-recipient-information (nextForm) = "nextForm($event)" *ngIf="navigationPosition === 1" ></app-recipient-information>
+            <app-recipient-bank-details (nextForm) = "nextForm($event)" *ngIf="navigationPosition === 2" ></app-recipient-bank-details>
+            <app-charges (nextForm) = "nextForm($event)" *ngIf="navigationPosition === 4" ></app-charges>
+            <app-supporting-documents (nextForm) = "nextForm($event)" *ngIf="navigationPosition === 3" ></app-supporting-documents> 
+
+           
+            <app-review (nextForm) = "nextForm($event)" *ngIf="navigationPosition === 5" ></app-review> 
+                   
+            <app-confirmation *ngIf="navigationPosition === 6" ></app-confirmation> 
+    
+               
+        </section>
+  
+        
+        
+      </app-main-content-container>
+  
+      
+  
+    </app-dashboard-content-container>
+    
+  
+  </app-dashboard-container>
+  
+  
+  
+  
+  
+  <!-- <ng-container [ngSwitch]="PAGE_STATE">
+    <app-dashboard-subheader *ngIf="PAGE_STATE !== PROGRESS.COMPLETE && navigationPosition !== 0"
+      [position]="navigationPosition" [totalSteps]="totalSteps"
+      [head_title]="'This is the sub title'"></app-dashboard-subheader>
+      <app-stepper-component></app-stepper-component>
+      <app-side-nav-container>
+  
+        <nav>
+          <div
+          class="link-container"
+          routerLinkActive="div-active"
+        >
+          <a
+            class="nav-link active"
+          >
+          
+          <span id="nav-link-text ">
+            <img [src]="assetUrl+'/assets/icons/dashboard_icon.png'" alt="" srcset="">
+  
+            
+            <span class="spacer"></span>
+  
+          </span>
+          <span class = "nav-text"> Dashboard </span>
+          </a>
+          </div>
+          <div class="nav-horizontal-divider"></div>
+  
+          
+          <div
+            class="link-container"
+            routerLinkActive="div-active"
+          >
+          <a
+          class="nav-link"
+        >
+        
+        <span id="nav-link-text ">
+          <img [src]="assetUrl+'/assets/icons/icn_tile_success.png'" alt="" srcset="">
+  
+          
+          <span class="spacer"></span>
+  
+        </span>
+        <span class = "nav-text"> Active </span>
+        </a>
+          </div>
+  
+          <div
+          class="link-container"
+          routerLinkActive="div-active"
+        >
+        <a
+        class="nav-link"
+      >
+      
+      <span id="nav-link-text ">
+        <img [src]="assetUrl+'/assets/icons/icn_calendar_clock.png'" alt="" srcset="">
+  
+        
+        <span class="spacer"></span>
+  
+      </span>
+      <span class = "nav-text"> Due </span>
+      </a>
+        </div>
+  
+        <div
+        class="link-container"
+        routerLinkActive="div-active"
+      >
+      <a
+      class="nav-link"
+    >
+    
+    <span id="nav-link-text ">
+      <img [src]="assetUrl+'/assets/icons/icn_warning_outline.png'" alt="" srcset="">
+  
+      
+      <span class="spacer"></span>
+  
+    </span>
+    <span class = "nav-text"> Overdue </span>
+    </a>
+      </div>
+  
+  
+      <div
+      class="link-container"
+      routerLinkActive="div-active"
+    >
+    <a
+    class="nav-link"
+  >
+  
+  <span id="nav-link-text ">
+    <img [src]="assetUrl+'/assets/icons/icn_tile_remove.png'" alt="" srcset="">
+  
+    
+    <span class="spacer"></span>
+  
+  </span>
+  <span class = "nav-text"> Removed </span>
+  </a>
+    </div>
+        </nav>
+      </app-side-nav-container>
+  
+    <section *ngSwitchCase="PROGRESS.DONE" class="main-content-body">
+  
+      <section class="main-account-details-container">
+        <section class="main-forms-content" style="padding: 20px">
+  
+  
+          <app-add-review (navigateBack)="navigateToForm($event)" *ngIf="navigationPosition == 0">
+          </app-add-review>
+  
+          <app-application-complete *ngIf="navigationPosition == 1"></app-application-complete>
+  
+  
+        </section>
+  
+      </section>
+    </section>
+  
+    <ng-container *ngSwitchCase="PROGRESS.LOADING">
+      <section class="loader-screen">
+        <mat-spinner strokeWidth="3" [diameter]="30"></mat-spinner>
+      </section>
+    </ng-container>
+  
+    <ng-container *ngSwitchCase="PROGRESS.COMPLETE">
+      <section class="loader-screen">
+        <app-application-complete></app-application-complete>
+      </section>
+    </ng-container>
+  </ng-container> -->

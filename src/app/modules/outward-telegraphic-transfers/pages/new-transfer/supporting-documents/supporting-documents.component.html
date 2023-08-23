@@ -1,0 +1,44 @@
+
+<app-display-card>
+    <section class = "card-header" >
+        <span class = "card-title"> Supporting Documents </span> 
+        
+        <span class = "card-instruction"> Upload the required supporting documents. </span>
+      </section>
+    
+    <section  class = "card-content" >
+        <section *ngFor = "let doc of docs" class = "card-subsection" >
+            <span class = "card-sub-title"> {{doc.name}}</span> 
+            <span id = {{doc.name}} class = "card-upload-section" *ngIf = !doc.isUploaded (dragleave)= DragLeft($event,doc.name) (dragover)= DraggedOver($event,doc.name) (drop)= onDrop($event,doc.name)>
+                <input type="file" (change)="onFileChange($event,doc.name)" id="file-input" accept=".pdf, .doc, .docx" /> 
+                <img [src]="assetUrl+'/assets/icons/upload_image.svg'" alt="" srcset="" for="file-input">
+                    <label for="file-input" class="label-for-file" > Drag and drop file here or &nbsp;<p >  Browse files</p></label>
+                </span>
+                <span class = "card-file-section" *ngIf = doc.isUploaded >
+                    <section class="file-name">
+                        <p>{{ doc.fileName }}</p>
+                        <section class = "file-upload-icons">
+                            <img  [src]="assetUrl+'/assets/icons/check-circle-fill.svg'" alt="" srcset="" for="file-input">
+                            <img class= "trash_can"  [src]="assetUrl+'/assets/icons/trash_can.svg'" alt="" srcset="" for="file-input" (click)=deleteFile(doc.name)>
+                        </section>
+                    </section>
+
+                    <span class = "progress-bar"></span>    
+                    </span>
+        </section>
+    </section>
+    
+<section class="button-section">
+   <app-button (trigger)="nextForm.emit(4)" [backgroundColor]="'#3b82f6'" [textColor]="'white'" [fontsize]="'11px'" [width]="'80px'" [height]="'30px'">
+<!-- <img [src]="assetUrl+'/assets/svgs/arrow-left.svg'" alt="" srcset=""> -->
+<span>Continue</span>
+   </app-button>
+   <app-button (trigger)="nextForm.emit(2)"  [backgroundColor]="'#dbeafe'" [textColor]="'#3b82f6'" [fontsize]="'11px'" [width]="'80px'" [height]="'30px'" [marginright]= "'7px'"  [fontweight]="'600'">
+       <span>Previous</span>
+              </app-button>
+   <app-button  [backgroundColor]="'white'" [textColor]="'black'" [fontsize]="'11px'" [width]="'60px'" [bord]="'1.8px solid #e5e7eb'" [height]="'30px'" [marginright]= "'7px'"  [fontweight]="'600'">
+       <!-- <img [src]="assetUrl+'/assets/svgs/arrow-left.svg'" alt="" srcset=""> -->
+       <span>Cancel</span>
+              </app-button>
+</section>
+</app-display-card>

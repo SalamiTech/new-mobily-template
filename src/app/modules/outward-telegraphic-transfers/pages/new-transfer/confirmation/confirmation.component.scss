@@ -1,0 +1,84 @@
+.circle{
+    border-radius: 100%;
+    background-color: #dbeafe;
+    padding: 12px 4px 10px 15px;
+    width: 57px;
+    align-self: center;
+}
+
+.login_form_group{
+    padding-top: 10px;
+}
+form{
+    width : 100%;
+  }
+
+  .account_details_inputs{
+    display: flex;
+    flex-wrap: wrap;
+  
+    margin-bottom: 40px;
+  }
+  
+ .wire-transfer_details_input_item{
+    margin-left: 30px;
+    margin-bottom: 20px;
+  }
+
+  .card-content{
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    margin-top: 20px;
+}  
+.card-content::-webkit-scrollbar {
+    display: none;
+  }
+
+
+  .confirm-message-header{
+
+    font-weight: 600;
+    margin-left: 32px;
+    margin-top: 32px;
+    font-family: Inter;
+    font-size: 16px;
+    align-self: center;
+}
+.confirm-message{
+
+    font-weight: 600;
+    margin-left: 20px;
+    margin-top: 32px;
+    font-family: Inter Light;
+    font-size: 14px;
+    color: #424242;
+}
+
+  .card-title{
+    font-weight: 600;
+    margin-left: 30px;
+    margin-top: 32px;
+    font-family: Inter;
+    font-size: 26px;
+    
+}
+.card-instruction{
+  font-weight: 600;
+  font-size: 8px;
+  margin-left: 35px;
+  margin-top: 20px;
+  font-family: Inter;
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+
+.button-section{
+    background-color: #f9fafb;
+    border-radius: 0px 0px 10px 17px;
+    border-top: 1px solid #e5e7eb;
+    padding: 11px;
+    display: flex;
+    flex-direction: row-reverse;
+}
+

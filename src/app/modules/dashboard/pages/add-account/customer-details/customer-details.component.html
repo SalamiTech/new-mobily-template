@@ -1,0 +1,127 @@
+<section class="customer-details-container">
+
+    <section class="customer-details-header">
+      <h4>Customer Details</h4>
+    </section>
+  
+  
+  
+    <form [formGroup]="accountDetailsFormGroup" class="login_form_group">
+  
+      <section class="account_details_inputs_header">
+            <div class="header_text">Customer</div>
+    
+            <div class="dropdown_arrow">
+            <img matRipple [src]="assetUrl+'/assets/svgs/circular-arrow.svg'" alt="" srcset="">
+            <div class="line-divider"></div>
+            </div>
+      </section>
+  
+  
+      <section class="account_details_inputs">
+  
+                <mat-form-field floatLabel="always"  class="account_details_input_item" appearance="outline" [style.width.px]=327>
+                <mat-label>Account Number</mat-label>
+                <input  name="cifNumber" formControlName="cifNumber" [(ngModel)]="cifDetails.cifNumber" matInput placeholder="Account Number">
+                <mat-error><mat-icon>error</mat-icon> &nbsp;Account Number is required</mat-error>
+                </mat-form-field>
+                <!-- (keyup)="lookUpAccountNumber()" -->
+        
+                <mat-form-field floatLabel="always" class="account_details_input_item input-disabled" appearance="outline" [style.width.px]=327 > 
+                <mat-label> Account  Name</mat-label>
+                <input  name="cifNumber"  formControlName="cifNumber" [value]="cifDetails.customerAccName" [(ngModel)]="cifDetails.customerAccName" matInput  placeholder="Account Name" [attr.disabled]="'disabled'">
+                <mat-error><mat-icon>error</mat-icon> &nbsp; Account Name is required</mat-error>
+                </mat-form-field> 
+            
+
+                <!-- <app-search-dropdown 
+                [items]="countries" 
+                [selected] = "accountDetails.receiverAccCountry"
+                [size]="'small'" 
+                [label]="'name'" 
+                [uid]="'code'" 
+                (afterChange)="getSelectedCountry($event)"
+                [placeholder]="'Select Country'"
+                
+                >
+            </app-search-dropdown> -->
+
+            <mat-form-field floatLabel="always" class="account_details_input_item input-disabled" appearance="outline" [style.width.px]=327 > 
+                <mat-label> Risk Category</mat-label>
+                <input  name="cifNumber"  formControlName="cifNumber" [value]="cifDetails.customerAccName" [(ngModel)]="cifDetails.customerAccName" matInput  placeholder="Enter Risk Category" [attr.disabled]="'disabled'">
+                <!-- <mat-error><mat-icon>error</mat-icon> &nbsp; Account Name is required</mat-error> -->
+            </mat-form-field> 
+
+
+      </section>
+  
+  
+      <section class="account_details_inputs_header">
+        <div class="header_text">Relationship Manager</div>
+  
+        <div class="dropdown_arrow">
+          <img matRipple [src]="assetUrl+'/assets/svgs/circular-arrow.svg'" alt="" srcset="">
+          <div class="line-divider"></div>
+        </div>
+      </section>
+  
+      <section class="account_details_inputs">
+  
+        <mat-form-field floatLabel="always"  class="account_details_input_item" appearance="outline" [style.width.px]=327>
+          <mat-label>Relationship Manager's Name</mat-label>
+          <input  name="cifNumber" formControlName="cifNumber" [(ngModel)]="cifDetails.cifNumber" matInput placeholder="Enter Relationship Manager's Name">
+          <mat-error><mat-icon>error</mat-icon> &nbsp;Account Number is required</mat-error>
+        </mat-form-field>
+        <!-- (keyup)="lookUpAccountNumber()" -->
+  
+        <mat-form-field floatLabel="always" class="account_details_input_item input-disabled" appearance="outline" [style.width.px]=327 > 
+          <mat-label>Relationship Manager's ID</mat-label>
+          <input  name="cifNumber"  formControlName="cifNumber" [value]="cifDetails.customerAccName" [(ngModel)]="cifDetails.customerAccName" matInput  placeholder="Enter Relationship Manager's ID" [attr.disabled]="'disabled'">
+          <mat-error><mat-icon>error</mat-icon> &nbsp; Account Name is required</mat-error>
+        </mat-form-field> 
+      
+
+        <mat-form-field floatLabel="always" class="account_details_input_item input-disabled" appearance="outline" [style.width.px]=327 > 
+            <mat-label> Portfolio Code</mat-label>
+            <input  name="cifNumber"  formControlName="cifNumber" [value]="cifDetails.customerAccName" [(ngModel)]="cifDetails.customerAccName" matInput  placeholder="Enter Portfolio Code" [attr.disabled]="'disabled'">
+            <!-- <mat-error><mat-icon>error</mat-icon> &nbsp; Account Name is required</mat-error> -->
+          </mat-form-field> 
+
+      <mat-form-field floatLabel="always" class="account_details_input_item input-disabled" appearance="outline" [style.width.px]=327 > 
+        <mat-label>Manager's Name ID</mat-label>
+        <input  name="cifNumber"  formControlName="cifNumber" [value]="cifDetails.customerAccName" [(ngModel)]="cifDetails.customerAccName" matInput  placeholder="Enter Manager's Name ID" [attr.disabled]="'disabled'">
+        <!-- <mat-error><mat-icon>error</mat-icon> &nbsp; Account Name is required</mat-error> -->
+      </mat-form-field> 
+
+
+      </section>  
+  
+  
+      <section class="account_details_inputs_header">
+        <div class="header_text">Counterparty</div>
+  
+        <div class="dropdown_arrow">
+          <img matRipple [src]="assetUrl+'/assets/svgs/circular-arrow.svg'" alt="" srcset="">
+          <div class="line-divider"></div>
+        </div>
+      </section>
+  
+      <section  class="account_details_inputs">
+  
+        <mat-form-field floatLabel="always" class="account_details_input_item input-disabled" appearance="outline" [style.width.px]=327 > 
+            <mat-label> Counterparty Group</mat-label>
+            <input  name="cifNumber"  formControlName="cifNumber" [value]="cifDetails.customerAccName" [(ngModel)]="cifDetails.customerAccName" matInput  placeholder="Enter  Counterparty Group" [attr.disabled]="'disabled'">
+            <!-- <mat-error><mat-icon>error</mat-icon> &nbsp; Account Name is required</mat-error> -->
+          </mat-form-field> 
+
+      <mat-form-field floatLabel="always" class="account_details_input_item input-disabled" appearance="outline" [style.width.px]=327 > 
+        <mat-label> Counterparty Group Name</mat-label>
+        <input  name="cifNumber"  formControlName="cifNumber" [value]="cifDetails.customerAccName" [(ngModel)]="cifDetails.customerAccName" matInput  placeholder="Enter  Counterparty Group Name" [attr.disabled]="'disabled'">
+        <!-- <mat-error><mat-icon>error</mat-icon> &nbsp; Account Name is required</mat-error> -->
+      </mat-form-field> 
+  
+      </section>
+  
+    </form>
+  
+  </section>

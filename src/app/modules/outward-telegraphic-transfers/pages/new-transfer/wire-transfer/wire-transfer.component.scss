@@ -1,0 +1,61 @@
+.login_form_group{
+    padding-top: 10px;
+}
+form{
+    width : 100%;
+  }
+
+  .account_details_inputs{
+    display: flex;
+    flex-wrap: wrap;
+  
+    margin-bottom: 40px;
+  }
+  
+ .wire-transfer_details_input_item{
+    margin-left: 30px;
+    margin-bottom: 20px;
+  }
+  .button-section{
+    background-color: #f9fafb;
+    border-radius: 0px 0px 10px 17px;
+    border-top: 1px solid #e5e7eb;
+    padding: 11px;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+
+.card-content{
+  display: flex;
+  flex-direction: row;
+  overflow-y: scroll;
+}  
+.card-content::-webkit-scrollbar {
+display: none;
+}
+
+
+.card-header{
+  display: flex;
+  flex-direction: column;
+
+}
+
+.card-title{
+  font-weight: 600;
+  margin-left: 32px;
+  margin-top: 32px;
+  font-family: Inter;
+  font-size: 26px;
+  
+}
+.card-instruction{
+font-weight: 600;
+font-size: 8px;
+margin-left: 35px;
+margin-top: 20px;
+font-family: Inter;
+font-size: 12px;
+margin-bottom: 13px;
+}

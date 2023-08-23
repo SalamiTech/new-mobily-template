@@ -1,0 +1,224 @@
+<app-dashboard-container>
+
+  <app-dashboard-header></app-dashboard-header>
+  <app-dashboard-subheader></app-dashboard-subheader>
+
+  <app-dashboard-content-container style="flex: 1 1 auto; height: calc(100vh - var(--dashboard-header-height));">
+
+    <app-side-nav-container>
+
+      <nav>
+        <div
+        class="link-container"
+        routerLinkActive="div-active"
+      >
+        <a
+          class="stepper-link"
+          routerLink="/dashboard/home"
+        >
+        
+        <span id="nav-link-text ">
+          <img [src]="assetUrl+'/assets/icons/chevron_left.svg'" alt="" srcset="">
+
+          
+          <span class="spacer"></span>
+
+        </span>
+        <span class = "stepper-header"> Dashboard </span>
+        </a>
+        </div>
+
+
+        <app-stepper-component [value]="navigationPosition"  (emitCurrentState)="updateSelectedIndex($event)">
+
+          <cdk-step [completed]="isCustomerValid"  [label]="'Customer Details'">1</cdk-step>
+          <cdk-step [completed]="isFreqValid"   [label]="'Frequency Details'">2</cdk-step>
+          <cdk-step [completed]="isReviewValid" [label]="'Review'">3</cdk-step>
+        </app-stepper-component>
+      
+  
+      </nav>
+    </app-side-nav-container>
+
+    <app-main-content-container style="flex: 1 1 auto; height: calc(100vh - var(--dashboard-header-height))">
+
+         
+        <section class="main-forms-content">
+          <app-customer-details *ngIf="navigationPosition === 0" ></app-customer-details>
+
+          <app-frequency-details *ngIf="navigationPosition === 1" ></app-frequency-details>
+          <app-add-review *ngIf="navigationPosition === 2" ></app-add-review>
+      </section>
+
+      <section class="stepper-navigator">
+
+        <app-button *ngIf="navigationPosition > 0" (trigger)="previousForm()" [backgroundColor]="'white'" [textColor]="'black'" [width]="'200px'" [height]="'50px'">
+          <section class="back-button-design">
+            <img [src]="assetUrl+'/assets/svgs/arrow-left.svg'" alt="" srcset="">
+            <span>Previous</span>
+          </section>
+        </app-button>
+        <!-- <button (click)="previousForm()" mat-flat-button>Back</button> -->
+      
+        <div class="spacer"></div>
+        <!-- <button (click)="nextForm()" mat-flat-button>Next</button> -->
+
+        <!--  -->
+        <ng-container >
+          <app-button  (trigger)="nextForm()"[backgroundColor]="'#0062e1'" [textColor]="'white'" [width]="'200px'" [height]="'50px'">
+            {{ navigationPosition !== 2 ? 'Continue' :'Submit'}}
+          </app-button>
+        </ng-container>
+        <!-- *ngIf="validateCurrentForm()" > -->
+      </section>
+      
+    </app-main-content-container>
+
+    
+
+  </app-dashboard-content-container>
+  
+
+</app-dashboard-container>
+
+
+
+
+
+<!-- <ng-container [ngSwitch]="PAGE_STATE">
+  <app-dashboard-subheader *ngIf="PAGE_STATE !== PROGRESS.COMPLETE && navigationPosition !== 0"
+    [position]="navigationPosition" [totalSteps]="totalSteps"
+    [head_title]="'This is the sub title'"></app-dashboard-subheader>
+    <app-stepper-component></app-stepper-component>
+    <app-side-nav-container>
+
+      <nav>
+        <div
+        class="link-container"
+        routerLinkActive="div-active"
+      >
+        <a
+          class="nav-link active"
+        >
+        
+        <span id="nav-link-text ">
+          <img [src]="assetUrl+'/assets/icons/dashboard_icon.png'" alt="" srcset="">
+
+          
+          <span class="spacer"></span>
+
+        </span>
+        <span class = "nav-text"> Dashboard </span>
+        </a>
+        </div>
+        <div class="nav-horizontal-divider"></div>
+
+        
+        <div
+          class="link-container"
+          routerLinkActive="div-active"
+        >
+        <a
+        class="nav-link"
+      >
+      
+      <span id="nav-link-text ">
+        <img [src]="assetUrl+'/assets/icons/icn_tile_success.png'" alt="" srcset="">
+
+        
+        <span class="spacer"></span>
+
+      </span>
+      <span class = "nav-text"> Active </span>
+      </a>
+        </div>
+
+        <div
+        class="link-container"
+        routerLinkActive="div-active"
+      >
+      <a
+      class="nav-link"
+    >
+    
+    <span id="nav-link-text ">
+      <img [src]="assetUrl+'/assets/icons/icn_calendar_clock.png'" alt="" srcset="">
+
+      
+      <span class="spacer"></span>
+
+    </span>
+    <span class = "nav-text"> Due </span>
+    </a>
+      </div>
+
+      <div
+      class="link-container"
+      routerLinkActive="div-active"
+    >
+    <a
+    class="nav-link"
+  >
+  
+  <span id="nav-link-text ">
+    <img [src]="assetUrl+'/assets/icons/icn_warning_outline.png'" alt="" srcset="">
+
+    
+    <span class="spacer"></span>
+
+  </span>
+  <span class = "nav-text"> Overdue </span>
+  </a>
+    </div>
+
+
+    <div
+    class="link-container"
+    routerLinkActive="div-active"
+  >
+  <a
+  class="nav-link"
+>
+
+<span id="nav-link-text ">
+  <img [src]="assetUrl+'/assets/icons/icn_tile_remove.png'" alt="" srcset="">
+
+  
+  <span class="spacer"></span>
+
+</span>
+<span class = "nav-text"> Removed </span>
+</a>
+  </div>
+      </nav>
+    </app-side-nav-container>
+
+  <section *ngSwitchCase="PROGRESS.DONE" class="main-content-body">
+
+    <section class="main-account-details-container">
+      <section class="main-forms-content" style="padding: 20px">
+
+
+        <app-add-review (navigateBack)="navigateToForm($event)" *ngIf="navigationPosition == 0">
+        </app-add-review>
+
+        <app-application-complete *ngIf="navigationPosition == 1"></app-application-complete>
+
+
+      </section>
+
+    </section>
+  </section>
+
+  <ng-container *ngSwitchCase="PROGRESS.LOADING">
+    <section class="loader-screen">
+      <mat-spinner strokeWidth="3" [diameter]="30"></mat-spinner>
+    </section>
+  </ng-container>
+
+  <ng-container *ngSwitchCase="PROGRESS.COMPLETE">
+    <section class="loader-screen">
+      <app-application-complete></app-application-complete>
+    </section>
+  </ng-container>
+</ng-container> -->

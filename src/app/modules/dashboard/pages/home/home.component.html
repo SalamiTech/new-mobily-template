@@ -1,0 +1,170 @@
+<app-dashboard-container>
+
+  <app-dashboard-header></app-dashboard-header>
+  <app-dashboard-subheader></app-dashboard-subheader>
+
+  <app-dashboard-content-container style="flex: 1 1 auto; height: calc(100vh - var(--dashboard-header-height));">
+
+    <app-side-nav-container [isMobile]="toggleMobile" [opened]="mobileState">
+
+      <nav>
+        <div
+        class="link-container"
+        routerLinkActive="div-active"
+      >
+        <a
+          class="nav-link active"
+        >
+        
+        <span id="nav-link-text ">
+          <img [src]="assetUrl+'/assets/icons/dashboard_icon.png'" alt="" srcset="">
+
+          
+          <span class="spacer"></span>
+
+        </span>
+        <span class = "nav-text"> Dashboard </span>
+        </a>
+        </div>
+        <div class="nav-horizontal-divider"></div>
+
+        
+        <div
+          class="link-container"
+          routerLinkActive="div-active"
+        >
+        <a
+        class="nav-link"
+      >
+      
+      <span id="nav-link-text ">
+        <img [src]="assetUrl+'/assets/icons/icn_tile_success.png'" alt="" srcset="">
+
+        
+        <span class="spacer"></span>
+
+      </span>
+      <span class = "nav-text"> Active </span>
+      </a>
+        </div>
+
+        <div
+        class="link-container"
+        routerLinkActive="div-active"
+      >
+      <a
+      class="nav-link"
+    >
+    
+    <span id="nav-link-text ">
+      <img [src]="assetUrl+'/assets/icons/icn_calendar_clock.png'" alt="" srcset="">
+
+      
+      <span class="spacer"></span>
+
+    </span>
+    <span class = "nav-text"> Due </span>
+    </a>
+      </div>
+
+      <div
+      class="link-container"
+      routerLinkActive="div-active"
+    >
+    <a
+    class="nav-link"
+  >
+  
+  <span id="nav-link-text ">
+    <img [src]="assetUrl+'/assets/icons/icn_warning_outline.png'" alt="" srcset="">
+
+    
+    <span class="spacer"></span>
+
+  </span>
+  <span class = "nav-text"> Overdue </span>
+  </a>
+    </div>
+
+
+    <div
+    class="link-container"
+    routerLinkActive="div-active"
+  >
+  <a
+  class="nav-link"
+>
+
+<span id="nav-link-text ">
+  <img [src]="assetUrl+'/assets/icons/icn_tile_remove.png'" alt="" srcset="">
+
+  
+  <span class="spacer"></span>
+
+</span>
+<span class = "nav-text"> Removed </span>
+</a>
+  </div>
+      </nav>
+    </app-side-nav-container>
+
+    <app-main-content-container style="flex: 1 1 auto; height: calc(100vh - var(--dashboard-header-height))">
+
+
+
+      <section class="main-dash-content-container">
+         
+        <section class="main-dash-content">
+
+          <!-- <app-tips (closeWizard)="toggelGettingStarted()" *ngIf="wizard" style="margin: 20px;  display: flex; justify-content: center; align-items: center"></app-tips> -->
+          
+          <router-outlet></router-outlet>
+
+        </section>
+
+      </section>
+      
+    </app-main-content-container>
+
+    <section class="main-dash-side-nav-container">
+           
+      <section class="main-dash-side-nav">
+        <button
+        style = "margin-top: 10px;"
+        class="nav-button-design"
+        matTooltip="New Transaction" class="add-transaction-button"
+        routerLink="/dashboard/add_account"
+        mat-icon-button color="primary" 
+        aria-label="add new transaction button">
+        <img   [src]="assetUrl+'/assets/icons/add_trans.svg'" alt="" srcset="">
+        </button>
+       
+        <button
+        style = "margin-top: 30px;"
+        class="nav-button-design"
+        matTooltip="Download Excel" class="add-transaction-button"
+        mat-icon-button color="primary" 
+        aria-label="add new transaction button">
+        <img   [src]="assetUrl+'/assets/icons/download_excel.svg'" alt="" srcset="">
+        </button>
+
+        <button
+        style = "margin-top: 50px;"
+        class="nav-button-design"
+        matTooltip="Active Tips" class="add-transaction-button"
+        routerLink="/dashboard/home"
+        mat-icon-button color="primary" 
+        aria-label="add new transaction button">
+        <img   [src]="assetUrl+'/assets/icons/active_tips.svg'" alt="" srcset="">
+        </button>
+
+       
+      </section>
+
+
+    </section>
+
+  </app-dashboard-content-container>
+  
+
+</app-dashboard-container>

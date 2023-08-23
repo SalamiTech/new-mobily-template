@@ -1,0 +1,77 @@
+<section class="add-transaction-details-container">
+
+  <section class="add-transaction-details-header">
+    <h4>Receipt</h4>
+  </section>
+
+  <section class="transaction-receipt-head">
+    <h4><span class="bolden">Cash Build</span></h4>
+    <h4><span class="bolden">{{getCurrentDate()}}</span> </h4>
+  </section>
+
+  <section class="transaction-receipt-amount-head">
+    <h4> <span class="bolden">Loan Amount</span> </h4>
+    <!-- <h4 class="amount"> <span bolden>{{ (convertToNumber(originatorAmt) | currency:  localCurrency:"symbol":".2-2")+" - "+ (convertToNumber(receiverAmt) | currency:  getDestinationCurrency():"symbol":".2-2") }}</span> </h4> -->
+  </section>
+
+  <section class="transaction-receipt-details-main">
+    <h4 class="trans-detail-head"> <span class="bolden"> Loan Details </span></h4>
+    
+    <!-- <div class="trans-details-ref">Loan Reference : GHT0078709095800</div> -->
+
+    <section class="trans-details-column">
+      <div>Originator Account : <span class="bolden"> {{accountDetails.customerAccName}}</span></div>
+      <div>Account Name : <span class="bolden">{{accountDetails.cifNumber}}</span></div>
+    </section>
+
+    <section class="trans-details-column">
+      <div>Beneficiary Account : <span class="bolden">{{accountDetails.cifNumber}}</span></div>
+      <div>Account Name : <span class="bolden">{{accountDetails.customerAccName}}</span></div>
+    </section>
+
+    <section class="trans-details-column">
+      <div>Destination Country : <span class="bolden">{{ getCountryByCode(accountDetails.cifNumber) +" ("+ accountDetails.cifNumber +")"}}</span> </div>
+      <!-- <div>Exchange Rate: <span class="bolden"> {{localCurrency+" 1.00 - "+getDestinationCurrency()+" "+ rates.exchangeRate +": " + accountDetails.receiverAccCountry}}</span></div> -->
+    </section>
+  </section>
+
+
+  <section class="transaction-receipt-details-main">
+    <h4 class="trans-detail-head"> <span class="bolden">Loan Fees</span></h4>
+    <!-- <h4 class="trans-detail-head">{{"Bank Charge - "}}</h4> -->
+
+      <ng-container *ngFor="let charge of rates.otherCharges">
+        <section class="trans-details-column">
+          <!-- <div>{{charge.name + "("+validateRateType(charge) +") : " }}</div> -->
+          <div class="bolden">{{ ( convertToNumber(charge.charge) | currency:  charge.ccy:"symbol":".2-2")}}</div>
+        </section>
+      </ng-container>
+    
+    <section class="trans-details-column">
+      <div>{{"Commission :"}}</div>
+      <!-- <div class="bolden">{{( convertToNumber(rates.commission)  | currency:  localCurrency:"symbol":".2-2")}}</div> -->
+    </section>
+
+    <section class="trans-details-column">
+      <div>{{"PAPSS Fee :"}}</div>
+      <!-- <div class="bolden">{{ (convertToNumber(rates.papssFee)  | currency:  localCurrency:"symbol":".2-2") }}</div> -->
+    </section>
+
+    <section class="trans-details-column">
+      <div>{{"Total Charge :"}}</div>
+      <!-- <div class="bolden">{{ convertToNumber(rates.totalCharge) | currency:  localCurrency:"symbol":".2-2"}}</div> -->
+    </section>
+    </section>
+
+
+  <section class="transaction-receipt-amount-head">
+    <h4> <span class="bolden">Total Amount Debited</span></h4>
+    <h4 class="amount ">
+      <span class="bolden">
+      <!-- {{ convertToNumber(rates.totalCustomerDebitAmount) | currency:  localCurrency:"symbol":".2-2"}} -->
+    </span>
+    </h4>
+  
+    </section>
+
+  </section>

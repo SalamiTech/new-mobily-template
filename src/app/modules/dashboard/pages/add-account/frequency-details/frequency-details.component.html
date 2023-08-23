@@ -1,0 +1,113 @@
+<section class="customer-details-container">
+
+    <section class="customer-details-header">
+      <h4>Frequency Details</h4>
+    </section>
+  
+  
+  
+    <form [formGroup]="frequencyDetailsFormGroup" class="login_form_group">
+  
+      <section class="account_details_inputs_header">
+            <div class="header_text">Loan</div>
+    
+            <div class="dropdown_arrow">
+            <img matRipple [src]="assetUrl+'/assets/svgs/circular-arrow.svg'" alt="" srcset="">
+            <div class="line-divider"></div>
+            </div>
+      </section>
+  
+  
+      <section class="account_details_inputs">
+  
+                <mat-form-field floatLabel="always"  class="account_details_input_item" appearance="outline" [style.width.px]=327>
+                <mat-label>Loan Amount</mat-label>
+                <input  name="originatorAccNumber" formControlName="loanAmount" [(ngModel)]="loanDetails.loanAmount" matInput placeholder="Enter Loan Amount">
+                <mat-error><mat-icon>error</mat-icon> &nbsp;Account Number is required</mat-error>
+                </mat-form-field>
+                <!-- (keyup)="lookUpAccountNumber()" -->
+        
+                <mat-form-field floatLabel="always"  class="account_details_input_item example-full-width">
+                    <mat-label>Date of Establishment</mat-label>
+                    <input matInput [matDatepicker]="picker">
+                    <mat-datepicker-toggle matIconSuffix [for]="picker">
+                      <mat-icon>calendar_today</mat-icon>
+                     </mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                  </mat-form-field>
+            
+
+            <mat-form-field floatLabel="always" class="account_details_input_item input-disabled" appearance="outline" [style.width.px]=327 > 
+                <mat-label> Loan Type</mat-label>
+                <input  name="loanType"  formControlName="loanType" [value]="loanDetails.loanType" [(ngModel)]="loanDetails.loanType" matInput  placeholder="Enter Loan Type" [attr.disabled]="'disabled'">
+                <!-- <mat-error><mat-icon>error</mat-icon> &nbsp; Account Name is required</mat-error> -->
+            </mat-form-field> 
+
+
+      </section>
+  
+  
+      <section class="account_details_inputs_header">
+        <div class="header_text">Frequency</div>
+  
+        <div class="dropdown_arrow">
+          <img matRipple [src]="assetUrl+'/assets/svgs/circular-arrow.svg'" alt="" srcset="">
+          <div class="line-divider"></div>
+        </div>
+      </section>
+  
+      <section class="account_details_inputs">
+  
+        <mat-form-field floatLabel="always"  class="account_details_input_item" appearance="outline" [style.width.px]=327>
+          <mat-label>% To Be Built</mat-label>
+          <input  name="percentageTBB" formControlName="percentageTBB" [(ngModel)]="frequencyDetails.percentageTBB" matInput placeholder="Enter Percentage To Be Built">
+          <mat-error><mat-icon>error</mat-icon> &nbsp;Account Number is required</mat-error>
+        </mat-form-field>
+        <!-- (keyup)="lookUpAccountNumber()" -->
+  
+        <mat-form-field floatLabel="always" class="account_details_input_item input-disabled" appearance="outline" [style.width.px]=327 > 
+          <mat-label>Timeline</mat-label>
+          <input  name="freqTimeline"  formControlName="freqTimeline" [value]="frequencyDetails.timeline" [(ngModel)]="frequencyDetails.timeline" matInput  placeholder="Enter the Timeline" [attr.disabled]="'disabled'">
+          <mat-error><mat-icon>error</mat-icon> &nbsp; Account Name is required</mat-error>
+        </mat-form-field> 
+      
+
+        <mat-form-field floatLabel="always" class="account_details_input_item input-disabled" appearance="outline" [style.width.px]=327 > 
+            <mat-label> Amount Due</mat-label>
+            <input  name="loanAmountDue"  formControlName="loanAmountDue" [value]="frequencyDetails.amountDue" [(ngModel)]="frequencyDetails.amountDue" matInput  placeholder="Enter Amount Due" [attr.disabled]="'disabled'">
+            <!-- <mat-error><mat-icon>error</mat-icon> &nbsp; Account Name is required</mat-error> -->
+          </mat-form-field> 
+
+      <mat-form-field floatLabel="always" class="account_details_input_item input-disabled" appearance="outline" [style.width.px]=327 > 
+        <mat-label>Due Date</mat-label>
+        <input  name="loanDueDate"  formControlName="loanDueDate" [value]="frequencyDetails.dueDate" [(ngModel)]="frequencyDetails.dueDate" matInput  placeholder="Enter Due Date" [attr.disabled]="'disabled'">
+        <!-- <mat-error><mat-icon>error</mat-icon> &nbsp; Account Name is required</mat-error> -->
+      </mat-form-field> 
+
+
+      </section>  
+  
+  
+      <section class="account_details_inputs_header">
+        <div class="header_text">Notes</div>
+  
+        <div class="dropdown_arrow">
+          <img matRipple [src]="assetUrl+'/assets/svgs/circular-arrow.svg'" alt="" srcset="">
+          <div class="line-divider"></div>
+        </div>
+      </section>
+  
+      <section  class="account_details_inputs">
+  
+        <mat-form-field floatLabel="always" class="account_details_input_item input-disabled" appearance="outline" [style.width.px]=327 > 
+            <mat-label> Comment</mat-label>
+            <textarea  name="notes"  formControlName="notes" [value]="frequencyDetails.notes" [(ngModel)]="frequencyDetails.notes" matInput  placeholder="" [attr.disabled]="'disabled'"></textarea>
+            <!-- <mat-error><mat-icon>error</mat-icon> &nbsp; Account Name is required</mat-error> -->
+          </mat-form-field> 
+
+      
+      </section>
+  
+    </form>
+  
+  </section>

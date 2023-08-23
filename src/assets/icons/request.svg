@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="31" height="35" viewBox="0 0 31 35">
+  <defs>
+    <filter id="Ellipse_490" x="13" y="17" width="18" height="18" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="1" result="blur"/>
+      <feFlood flood-color="#010002" flood-opacity="0.302"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Group_3906" data-name="Group 3906" transform="translate(-13557 -1950)">
+    <g id="Group_3902" data-name="Group 3902">
+      <path id="Path_1650" data-name="Path 1650" d="M13574,1958h7v20.87a1.122,1.122,0,0,1-1.13,1.13h-21.74a1.122,1.122,0,0,1-1.13-1.13v-27.74a1.122,1.122,0,0,1,1.13-1.13H13574Z" fill="#662d91"/>
+      <path id="Path_1651" data-name="Path 1651" d="M13581,1958h-7v-8Z" fill="#a07fbf"/>
+      <g id="Group_3901" data-name="Group 3901">
+        <rect id="Rectangle_1382" data-name="Rectangle 1382" width="18" height="1.714" transform="translate(13560 1960)" fill="#fff"/>
+        <rect id="Rectangle_1383" data-name="Rectangle 1383" width="18" height="1.714" transform="translate(13560 1963.714)" fill="#fff"/>
+        <rect id="Rectangle_1384" data-name="Rectangle 1384" width="18" height="1.714" transform="translate(13560 1967.429)" fill="#fff"/>
+        <rect id="Rectangle_1385" data-name="Rectangle 1385" width="10" height="1.714" transform="translate(13560 1971.143)" fill="#fff"/>
+      </g>
+      <path id="Path_1652" data-name="Path 1652" d="M13574,1958h7v8Z" fill="#3a145b" opacity="0.8"/>
+    </g>
+    <g transform="matrix(1, 0, 0, 1, 13557, 1950)" filter="url(#Ellipse_490)">
+      <circle id="Ellipse_490-2" data-name="Ellipse 490" cx="6" cy="6" r="6" transform="translate(16 20)" fill="#22b573"/>
+    </g>
+    <g id="Group_3905" data-name="Group 3905">
+      <g id="Group_3904" data-name="Group 3904">
+        <g id="Group_3903" data-name="Group 3903">
+          <path id="Path_1653" data-name="Path 1653" d="M13582.128,1975.591v.819h-2.6v2.719h-1.049v-2.719h-2.6v-.819h2.6v-2.719h1.049v2.719Z" fill="#fff"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,52 @@
+<app-display-card>
+  <section class = "card-header" >
+      <span class = "card-title"> Wire Transfer </span> 
+      
+      <span class = "card-instruction"> Fill in the details of the wire transfer </span>
+    </section>
+  
+  <section  class = "card-content" >
+
+
+<form [formGroup] = "wireTransferDetailsFormGroup" class="login_form_group">
+   
+   <section class="account_details_inputs">
+
+      <mat-form-field [style.width.px]=400  class="wire-transfer_details_input_item input-disabled">
+         <mat-label>Account Number</mat-label>
+         <mat-select>
+           <mat-option *ngFor="let acc of accounts.accountNumbers" [value]="acc">
+             {{acc}}
+           </mat-option>
+         </mat-select>
+       </mat-form-field>
+
+         <mat-form-field floatLabel="always" class="wire-transfer_details_input_item input-disabled" appearance="outline" [style.width.px]=327 > 
+             <mat-label>Amount</mat-label>
+             <input  name="amount"  formControlName="amount" [value]="wireTransferDetails.amount" matInput  placeholder="Enter Amount of Money" [attr.disabled]="'disabled'">
+             <!-- <mat-error> &nbsp; Account Name is required</mat-error> -->
+         </mat-form-field> 
+
+
+         <mat-form-field  readonly floatLabel="always"  class="wire-transfer_details_input_item" appearance="outline" [style.width.px]=500>
+            <mat-label>Amount In Words</mat-label>
+            <input  name="amountInWords" formControlName="amountInWords" [(ngModel)]="wireTransferDetails.amountInWords" matInput placeholder="Enter Amount in Words">
+            <mat-hint [style.color]="'green'" [style]="'font-family:Inter'"><mat-icon>error</mat-icon> This field is auto-populated</mat-hint>
+            </mat-form-field>
+   </section>
+
+ </form>
+</section>
+
+<section class="button-section">
+   <app-button (trigger)="nextForm.emit(1)" [backgroundColor]="'#3b82f6'" [textColor]="'white'" [fontsize]="'11px'" [width]="'80px'" [height]="'30px'">
+<!-- <img [src]="assetUrl+'/assets/svgs/arrow-left.svg'" alt="" srcset=""> -->
+<span>Continue</span>
+   </app-button>
+   <app-button  [backgroundColor]="'white'" [textColor]="'black'" [fontsize]="'11px'" [width]="'60px'" [bord]="'1.8px solid #e5e7eb'" [height]="'30px'" [marginright]= "'7px'"  [fontweight]="'600'">
+       <!-- <img [src]="assetUrl+'/assets/svgs/arrow-left.svg'" alt="" srcset=""> -->
+       <span>Cancel</span>
+              </app-button>
+</section>
+
+</app-display-card>
