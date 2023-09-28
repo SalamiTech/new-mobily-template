@@ -11,9 +11,9 @@ const routes: Routes = [
   },
   {
     path: 'dashboard',
-    data: {
-      expectedRole: []
-    },
+    // data: {
+    //   expectedRole: []
+    // },
     loadChildren: () =>
       import('./modules/dashboard/dashboard.module').then((m) => m.DashboardModule),
   },  {
